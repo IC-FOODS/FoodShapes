@@ -10,12 +10,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     :species xsd:string # eg taurus
   };
   :organolepticProperties @:OrganolepticShape ;
-    :texture ["perceived chewiness" "perceived astringency"] ; # controlled vocabulary from uc_Sense perceived_Texture:  
-    :mouthFeel ["perceived chewiness" "perceived astringency"];
-    :visualAppearance {
+  :texture ["perceived chewiness" "perceived astringency"] ;
+  :mouthFeel ["perceived chewiness" "perceived astringency"];
+  :visualAppearance {
       :color xsd:string ;
       :opaqueness xsd:float
-    }; 
+  }; 
   :physicalProperties {
     :density .;
     :freezingPoint .;
