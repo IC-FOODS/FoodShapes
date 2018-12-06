@@ -1,51 +1,62 @@
+PREFIX : <http://a.example/ns#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 ## What are the key value pairs needed to capture information about a sample of milk?
-- SampleID
-- Source Organism (uses NCBI taxonomy)-- 
-    - Genus eg bos
-    - Species eg taurus
-- Organoleptic properties
-    - Aroma (the "nasal appearance"): multiple terms from a controlled vocabulary (uses UC_Sense perceived Odor) 
-        - can be multiple aromas
-        - e.g. perceived butterscotch odor, perceived burnt odor
-    - Taste: all characteristics might not be present but there are no other properties can be multiple values from:
-        - Sweetness: as per a scale
-        - Sourness: as per a scale
-        - Bitterness: as per a scale
-        - Saltiness: as per a scale
-        - Umami: as per a scale
-    - Texture: controlled vocabulary from uc_Sense perceived_Texture:  
-    - Mouth Feel: controlled vocabulary from uc_Sense perceived_Mouthfeel e.g. perceived chewiness, perceived astringency
-    - VisualAppearance:
-        - Color
-        - Opaqueness
-- Physical properties:
-    - Density
-    - Freezing Point
-    - Acid-base Equilibria
-    - Viscosity
-    - Volume
-    - Optical Properties
-        - Color: what wavelengths (spectrometer reading)
-        -Absorbance:
-    - Temperature
-- Chemical Components:
-    - Molecules (classes of molecules)
-        - Lipids 
-        - Carbohydrates:
-            - total carbohydrates 
-                - value and unit e.g. 2 grams
-            - individual carbohydrates 
-                - sequence string, value, and units from https://tinyurl.com/yaxhwygf
-        - Free amino acids
-        - Peptides: sequence string and amount value, and unit 
-        - e.g. from values at https://tinyurl.com/yaxhwygf
-            - 
-        - 
-    - phValue value as per pH scale
-    - Xenobiotics
-- Biological Components:
-    - Microbiological
+
+<#MilkSample> {
+  :sampleID xsd:string ;
+  :sourceOrganism { # (uses NCBI taxonomy)
+    :genus xsd:string; # eg bos
+    :species xsd:string # eg taurus
+  };
+  :organolepticProperties {
+    :aroma . ; # (the "nasal appearance"): multiple terms from a controlled vocabulary (uses UC_Sense perceived Odor) 
+        # - can be multiple aromas
+        # - e.g. perceived butterscotch odor, perceived burnt odor
+    :taste { # all characteristics might not be present but there are no other properties can be multiple values from:
+      :sweetness xsd:float MinInclusive 0.0 MaxInclusive 10.0 ;
+      :sourness xsd:float MinInclusive 0.0 MaxInclusive 10.0 ;
+      :bitterness xsd:float MinInclusive 0.0 MaxInclusive 10.0 ;
+      :saltiness xsd:float MinInclusive 0.0 MaxInclusive 10.0 ;
+      :umami xsd:float MinInclusive 0.0 MaxInclusive 10.0
+    };
+    :texture ["perceived chewiness" "perceived astringency"] ; # controlled vocabulary from uc_Sense perceived_Texture:  
+    :mouthFeel ["perceived chewiness" "perceived astringency"];
+    :visualAppearance {
+      :color xsd:string ;
+      :opaqueness xsd:float
+    }
+  };
+  :physicalProperties {
+    :density .;
+    :freezingPoint .;
+    :acid-baseEquilibria .;
+    :viscosity .;
+    :volume .;
+    :opticalProperties {
+      :color: .;
+      :absorbance .;
+    };
+    :temperature .;
+  };
+#  :chemicalComponents {
+#    - Molecules (classes of molecules)
+#        - Lipids 
+#        - Carbohydrates:
+#            - total carbohydrates 
+#                - value and unit e.g. 2 grams
+#            - individual carbohydrates 
+#                - sequence string, value, and units from https://tinyurl.com/yaxhwygf
+#        - Free amino acids
+#        - Peptides: sequence string and amount value, and unit 
+#        - e.g. from values at https://tinyurl.com/yaxhwygf
+#            - 
+#        - 
+#    - phValue value as per pH scale
+#    - Xenobiotics
+#- Biological Components:
+#    - Microbiological
+}
 
 ## The ShEx
 
