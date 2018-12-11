@@ -1,5 +1,4 @@
 PREFIX : <https://raw.githubusercontent.com/IC-FOODS/FoodShapes/master/milk_shape/FoodShapes.ttl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX ucum: <http://unitsofmeasure.org/>
 ## What are the key value pairs needed to capture information about a sample of milk?
@@ -7,38 +6,50 @@ PREFIX ucum: <http://unitsofmeasure.org/>
 <#MilkSample> {
   :sampleID xsd:string ;
   :sourceOrganism { # (uses NCBI taxonomy)
-    :genus xsd:string; # eg bos
+    :genus xsd:string ; # eg bos
     :species xsd:string # eg taurus
-  };
-  :organolepticProperties {
-    :aroma . ; # (the "nasal appearance"): multiple terms from a controlled vocabulary (uses UC_Sense perceived Odor) 
-        # - can be multiple aromas
-        # - e.g. perceived butterscotch odor, perceived burnt odor
-    :taste { # all characteristics might not be present but there are no other properties can be multiple values from:
-      :sweetness xsd:float MinInclusive 0.0 MaxInclusive 10.0 ;
-      :sourness xsd:float MinInclusive 0.0 MaxInclusive 10.0 ;
-      :bitterness xsd:float MinInclusive 0.0 MaxInclusive 10.0 ;
-      :saltiness xsd:float MinInclusive 0.0 MaxInclusive 10.0 ;
-      :umami xsd:float MinInclusive 0.0 MaxInclusive 10.0
-    };
-    :texture ["perceived chewiness" "perceived astringency"] ; # controlled vocabulary from uc_Sense perceived_Texture:  
-    :mouthFeel ["perceived chewiness" "perceived astringency"];
-    :visualAppearance {
-      :color xsd:string ;
-      :opaqueness xsd:float
-    }
-  };
-  :physicalProperties {
-    :density ucum:kg\/L;
-    :freezingPoint ucum:Cel;
-    :acid-baseEquilibria .;
-    :viscosity ucum:St;
-    :volume ucum:L;
-    :opticalProperties {
-      :color: ucum:m;
-      :absorbance .;
-    };
-    :temperature ucum:Cel;
-  };
+  } ;
+  :physicalProperties @<#PhysicalProperties> ;
+  &<#organolepticProperties> ;
+}
+
+<#PhysicalProperties> {
+  :density ucum:kg\/L ;
+  :freezingPoint ucum:Cel ;
+  :acid-baseEquilibria . ;
+  :viscosity ucum:St ;
+  :volume ucum:L ;
+  &<#opticalProperties> ;
+  :temperature ucum:Cel ;
+}
+
+<#OpticalPropertiesShape> {
+  $<#opticalProperties> (
+    :color: ucum:m ;
+    :absorbance . ;
+  )
+}
+
+<#OrganolepticPropertiesShape> {
+  $<#organolepticProperties> (
+    :aroma . ;
+    :taste @<#Taste> ;
+    :texture ["perceived chewiness" "perceived astringency"]+ ;
+    :mouthFeel ["perceived chewiness" "perceived astringency"]+ ;
+    :visualAppearance @<#VisualAppearance> ;
+  )
+}
+
+<#Taste> { # all characteristics might not be present but there are no other properties can be multiple values from:
+  :sweetness xsd:decimal MinInclusive 0.0 MaxInclusive 10.0 ;
+  :sourness xsd:decimal MinInclusive 0.0 MaxInclusive 10.0 ;
+  :bitterness xsd:decimal MinInclusive 0.0 MaxInclusive 10.0 ;
+  :saltiness xsd:decimal MinInclusive 0.0 MaxInclusive 10.0 ;
+  :umami xsd:decimal MinInclusive 0.0 MaxInclusive 10.0 ;
+}
+
+<#VisualAppearance> {
+  :color xsd:string ;
+  :opacity xsd:decimal ;
 }
 

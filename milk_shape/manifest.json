@@ -1,0 +1,10 @@
+[
+  {
+    "schemaLabel": "Got Milk?",
+    "schemaURL": "milk.shex",
+    "dataLabel": "and cookies",
+    "dataURL": "milk-data.ttl",
+    "queryMap": "<s>@<#MilkSample>",
+    "status": "conformant"
+  }
+]
