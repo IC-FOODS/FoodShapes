@@ -9,11 +9,11 @@ PREFIX : <http://a.example/ns#>
   :organolepticProperties [
     :aroma "nasal appearance";
     :taste [
-#      :sweetness 5.0 ;
-#      :sourness 5.0 ;
-#      :bitterness 5.0 ;
-#      :saltiness 5.0 ;
-#      :umami 5.0
+      :sweetness 5.0 ;
+      :sourness 5.0 ;
+      :bitterness 5.0 ;
+      :saltiness 5.0 ;
+      :umami 5.0
     ]
   ]
 .
