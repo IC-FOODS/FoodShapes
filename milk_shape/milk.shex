@@ -1,6 +1,7 @@
 PREFIX : <http://a.example/ns#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ucum: <http://unitsofmeasure.org/>
 ## What are the key value pairs needed to capture information about a sample of milk?
 
 <#MilkSample> {
@@ -28,16 +29,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     }
   };
   :physicalProperties {
-    :density .;
-    :freezingPoint .;
+    :density ucum:kg\/L;
+    :freezingPoint ucum:Cel;
     :acid-baseEquilibria .;
-    :viscosity .;
-    :volume .;
+    :viscosity ucum:St;
+    :volume L;
     :opticalProperties {
-      :color: .;
+      :color: ucum:m;
       :absorbance .;
     };
-    :temperature .;
+    :temperature ucum:Cel;
   };
 }
 
