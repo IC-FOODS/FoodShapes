@@ -33,7 +33,7 @@ PREFIX ucum: <http://unitsofmeasure.org/>
     :freezingPoint ucum:Cel;
     :acid-baseEquilibria .;
     :viscosity ucum:St;
-    :volume L;
+    :volume ucum:L;
     :opticalProperties {
       :color: ucum:m;
       :absorbance .;
