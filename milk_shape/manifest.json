@@ -2,16 +2,16 @@
   {
     "schemaLabel": "Got Milk?",
     "schemaURL": "milk.shex",
-    "dataLabel": "most properties",
-    "dataURL": "milk-max.ttl",
+    "dataLabel": "minimal description",
+    "dataURL": "milk-min.ttl",
     "queryMap": "<s>@<#MilkSample>",
     "status": "conformant"
   },
   {
     "schemaLabel": "Got Milk?",
     "schemaURL": "milk.shex",
-    "dataLabel": "few properties",
-    "dataURL": "milk-min.ttl",
+    "dataLabel": "rich description",
+    "dataURL": "milk-max.ttl",
     "queryMap": "<s>@<#MilkSample>",
     "status": "conformant"
   }
