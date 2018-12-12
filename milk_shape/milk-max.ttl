@@ -18,7 +18,7 @@ PREFIX ucum: <http://unitsofmeasure.org/>
     :absorbance 999;
     :temperature "999"^^ucum:Cel;
   ];
-  :temperature ucum:Cel;
+  :temperature 10^^ucum:Cel;
   :aroma "nasal appearance";
   :taste [
     :sweetness 5.0 ;
