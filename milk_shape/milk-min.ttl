@@ -1,0 +1,23 @@
+PREFIX : <https://raw.githubusercontent.com/IC-FOODS/FoodShapes/master/milk_shape/FoodShapes.ttl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ucum: <http://unitsofmeasure.org/>
+
+<s>
+  :sourceOrganism [
+    :genus "bos";
+    :species "taurus"
+  ];
+  :physicalProperties [
+    :density "999"^^ucum:kg\/L;
+    :freezingPoint "999"^^ucum:Cel;
+    :acid-baseEquilibria 999;
+    :viscosity "999"^^ucum:St;
+    :volume "999"^^ucum:L;
+    :color: "999"^^ucum:m;
+    :absorbance 999;
+    :temperature "999"^^ucum:Cel;
+  ];
+  :temperature 10^^ucum:Cel;
+  :aroma "nasal appearance";
+.
+

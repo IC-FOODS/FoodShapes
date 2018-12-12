@@ -4,7 +4,7 @@ PREFIX ucum: <http://unitsofmeasure.org/>
 ## What are the key value pairs needed to capture information about a sample of milk?
 
 <#MilkSample> {
-  :sampleID xsd:string ;
+  :sampleID xsd:string? ;
   :sourceOrganism { # (uses NCBI taxonomy)
     :genus xsd:string ; # eg bos
     :species xsd:string # eg taurus
@@ -32,11 +32,11 @@ PREFIX ucum: <http://unitsofmeasure.org/>
 
 <#OrganolepticPropertiesShape> {
   $<#organolepticProperties> (
-    :aroma . ; # is aroma just a text field? controlled vocabulary?
-    :taste @<#Taste> ;
-    :texture ["perceived chewiness" "perceived astringency"]+ ;
-    :mouthFeel ["perceived chewiness" "perceived astringency"]+ ;
-    :visualAppearance @<#VisualAppearance> ;
+    :aroma .? ; # is aroma just a text field? controlled vocabulary?
+    :taste @<#Taste>? ;
+    :texture ["perceived chewiness" "perceived astringency"]* ;
+    :mouthFeel ["perceived chewiness" "perceived astringency"]* ;
+    :visualAppearance @<#VisualAppearance>? ;
   )
 }
 
