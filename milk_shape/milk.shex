@@ -16,7 +16,7 @@ PREFIX ucum: <http://unitsofmeasure.org/>
 <#PhysicalProperties> {
   :density ucum:kg\/L ;
   :freezingPoint ucum:Cel ;
-  :acid-baseEquilibria . ;
+  :acid-baseEquilibria . ; # how is this expressed in a machine-readable format?
   :viscosity ucum:St ;
   :volume ucum:L ;
   &<#opticalProperties> ;
@@ -26,13 +26,13 @@ PREFIX ucum: <http://unitsofmeasure.org/>
 <#OpticalPropertiesShape> {
   $<#opticalProperties> (
     :color @<#Color> ;
-    :absorbance . ;
+    :absorbance . ; # what are the units for absorbance?
   )
 }
 
 <#OrganolepticPropertiesShape> {
   $<#organolepticProperties> (
-    :aroma . ;
+    :aroma . ; # is aroma just a text field? controlled vocabulary?
     :taste @<#Taste> ;
     :texture ["perceived chewiness" "perceived astringency"]+ ;
     :mouthFeel ["perceived chewiness" "perceived astringency"]+ ;
