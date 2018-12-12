@@ -9,16 +9,19 @@ PREFIX ucum: <http://unitsofmeasure.org/>
     :species "taurus"
   ];
   :physicalProperties [
-    :density "999"^^ucum:kg\/L;
+    :density "999"^^<http://unitsofmeasure.org/kg/L>;
     :freezingPoint "999"^^ucum:Cel;
     :acid-baseEquilibria 999;
     :viscosity "999"^^ucum:St;
     :volume "999"^^ucum:L;
-    :color: "999"^^ucum:m;
+    :color [
+      :red "239"^^xsd:unsignedByte;
+      :green "239"^^xsd:unsignedByte;
+      :blue "239"^^xsd:unsignedByte;
+    ];
     :absorbance 999;
     :temperature "999"^^ucum:Cel;
   ];
-  :temperature 10^^ucum:Cel;
   :aroma "nasal appearance";
   :taste [
     :sweetness 5.0 ;
