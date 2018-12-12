@@ -1,4 +1,4 @@
-## What are the key value pairs needed to capture information about a sample of milk?
+#### Key value pairs needed to capture information about a sample of milk
 
 - SampleID
 - Source Organism (uses NCBI taxonomy)-- 
@@ -46,3 +46,24 @@
     - Xenobiotics
 - Biological Components:
     - Microbiological
+
+#### Molecular entity properties
+
+* accession (and source it refers to)
+* prefName, altName
+* description
+* organism (in particular, NCBITax ID)
+* provenance (URI or string)
+
+#### Properties from gene, protein
+
+* sequence, chromosome, begin, end
+
+#### Relations to other entities
+
+* ontology annotation/xref (GO, trait ontology, phenotype ontology)
+* associated with
+* encodes
+* part-of (eg, pathway, molecular complex)
+* input-of/output-of (eg, reaction, pathway)
+
