@@ -19,8 +19,8 @@
     "schemaLabel": "Wikidata milk",
     "schemaURL": "https://raw.githubusercontent.com/IC-FOODS/FoodShapes/master/milk_shape/wd_milk.shex",
     "dataLabel": "get all mammalian milk from Wikidata",
-    "data": "Endpoint: https://query.wikidata.org/sparql",
-    "queryMap": "SPARQL '''SELECT ?mamalian_milk ?species WHERE {?mamalian_milk p:P279  ?milk . ?milk ps:P279 wd:Q8495 ; pq:P642 ?species . }'''",
+    "data": "Endpoint: https://query.wikidata.org/sparql\nSELECT\n ?mamalian_milk ?species \n WHERE {\n?mamalian_milk p:P279  ?milk .\n ?milk ps:P279 wd:Q8495 ;\n pq:P642 ?species . }",
+    "queryMap": "SPARQL '''SELECT ?mamalian_milk ?species WHERE {?mamalian_milk p:P279  ?milk . ?milk ps:P279 wd:Q8495 ; pq:P642 ?species . }'''@START",
     "status": "conformant"
   }
 ]
