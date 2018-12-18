@@ -11,21 +11,21 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-start = @<#cow_milk>
+start = @<#mammalian_milk>
 
-<#cow_milk> {
+<#mammalian_milk> {
 	#statements 
 	p:P279     @<#P279_subclass_of> ; 
 	p:P1582    @<#P1582_natural_product_of_taxon> ;
 
 	#identifiers
-	p:P244     @<#P244_Library_of_Congress_authority_ID> ;
-	p:P268     @<#P268_BnF_ID> ;
-	p:P349     @<#P349_NDL_Auth_ID> ;
-	p:P1051    @<#P1051_PSH_ID> ;
-	p:P1748    @<#P1748_NCI_thesaurus_ID> ;
-	p:P1978    @<#P1978_USDA_NDB_number> ;
-	p:P2892  @<#P2892_UMLS_CUI> ;
+	p:P244     @<#P244_Library_of_Congress_authority_ID>? ;
+	p:P268     @<#P268_BnF_ID>? ;
+	p:P349     @<#P349_NDL_Auth_ID>? ;
+	p:P1051    @<#P1051_PSH_ID>? ;
+	p:P1748    @<#P1748_NCI_thesaurus_ID>? ;
+	p:P1978    @<#P1978_USDA_NDB_number>* ;
+	p:P2892  @<#P2892_UMLS_CUI>? ;
 	p:P4637  @<#P4637_FoodEx2_code> ;
 } 
 
