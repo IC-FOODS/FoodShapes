@@ -14,5 +14,13 @@
     "dataURL": "milk-max.ttl",
     "queryMap": "<s>@<#MilkSample>",
     "status": "conformant"
+  },
+  {
+    "schemaLabel": "Wikidata milk",
+    "schemaURL": "https://raw.githubusercontent.com/IC-FOODS/FoodShapes/master/milk_shape/wd_milk.shex",
+    "dataLabel": "get all mammalian milk from Wikidata",
+    "data": "Endpoint: https://query.wikidata.org/sparql",
+    "queryMap": "SPARQL '''SELECT ?mamalian_milk ?species WHERE {?mamalian_milk p:P279  ?milk . ?milk ps:P279 wd:Q8495 ; pq:P642 ?species . }'''",
+    "status": "conformant"
   }
 ]
