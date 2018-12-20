@@ -86,7 +86,7 @@ start = @<#mammalian_milk>
 }
 ```
 
-Currently there are only two milk items that adhere to this schema description. 
+Currently there are only two milk items that adhere to this schema description. See: [ShEx validation](https://rawgit.com/shexSpec/shex.js/wikidata/doc/shex-simple.html?manifestURL=https://raw.githubusercontent.com/IC-FOODS/FoodShapes/master/milk_shape/manifest.json) 
 
 ## Future work
 * We need to find public data on different types of mammalian milk, to enrich wikidata with knowledge on milk
