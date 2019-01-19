@@ -1,0 +1,15 @@
+
+
+start = @<#flavouring_agent>
+
+<#flavouring_agent> {
+    #statements
+	p:P31 @<#P31_instance_of> ;
+	p:P1528 @<#P1528_natural_product_of_taxon>+ ;
+	p:P2849 @<#P2849_produced_by>+ ;
+
+	#identifiers
+	p:P662 @<#P662_PubChem_CID> ;
+	p:P683 @<#P683> ;
+
+}

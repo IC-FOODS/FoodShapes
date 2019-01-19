@@ -1,0 +1,10 @@
+[
+    {
+        "schemaLabel": "flavouring agent",
+        "schemaURL": "https://raw.githubusercontent.com/SuLab/Genewiki-ShEx/master/genes/wikidata-human-genes.shex",
+        "dataLabel": "Get all flavouring agents from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT * WHERE {?item wdt:P31 wd:Q11173 ; wdt:P2868 wd:Q60678340 .}'''@START",
+        "status": "conformant"
+    }
+]
