@@ -34,12 +34,21 @@ start = @<#flavouring_agent>
 }
 
 <#P1582_natural_product_of_taxon> {
-	ps:P1582 [wd:~] ;
+	ps:P1582 @<#taxon> ;
 	prov:wasDerivedFrom @<reference>+ ;
+}
+
+<#taxon> {
+	wdt:P31 [wd:Q16521]
 }
 
 <#P2849_produced_by> {
 	ps:P2849 [wd:~] ;
+	pq:P2079 [
+       wd:Q844704 # extraction
+       wd:Q41760 # fermentation
+       wd:Q580689 # bioengineering
+	]
 	prov:wasDerivedFrom @<reference>+ ;
 }
 
