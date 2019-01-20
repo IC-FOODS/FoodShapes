@@ -1,15 +1,44 @@
-
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX commons: <http://commons.wikimedia.org/wiki/Special:FilePath/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 
 start = @<#flavouring_agent>
 
 <#flavouring_agent> {
     #statements
 	p:P31 @<#P31_instance_of> ;
+	p:P117 @<#P117_chemical_structure> ;
 	p:P1528 @<#P1528_natural_product_of_taxon>+ ;
 	p:P2849 @<#P2849_produced_by>+ ;
 
 	#identifiers
 	p:P662 @<#P662_PubChem_CID> ;
-	p:P683 @<#P683> ;
+	p:P683 @<#P683_ChEBI> ;
+}
 
+<#P31_instance_of> {
+	ps:P31 [wd:Q11173] ;
+}
+
+<#P117_chemical_structure> {
+	ps:P117 [commons:~] ;
+}
+
+<#P1528_natural_product_of_taxon> {
+	ps:P1528 [wd:~] ;
+	prov:wasDerivedFrom @<reference>+ ;
+}
+
+<#P2849_produced_by> {
+	ps:P2849 [wd:~] ;
+	prov:wasDerivedFrom @<reference>+ ;
 }
