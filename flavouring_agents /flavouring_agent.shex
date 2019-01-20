@@ -10,7 +10,7 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX commons: <http://commons.wikimedia.org/wiki/Special:FilePath/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
-
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 start = @<#flavouring_agent>
 
 <#flavouring_agent> {
@@ -41,4 +41,16 @@ start = @<#flavouring_agent>
 <#P2849_produced_by> {
 	ps:P2849 [wd:~] ;
 	prov:wasDerivedFrom @<reference>+ ;
+}
+
+<#P662_PubChem_CID> {
+	ps:P662 xsd:integer ;
+}
+
+<#P683_ChEBI> {
+	ps:P683 xsd:integer ;
+}
+
+<reference> {
+	
 }
