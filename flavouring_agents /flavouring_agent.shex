@@ -17,7 +17,7 @@ start = @<#flavouring_agent>
     #statements
 	p:P31 @<#P31_instance_of> ;
 	p:P117 @<#P117_chemical_structure> ;
-	p:P1528 @<#P1528_natural_product_of_taxon>+ ;
+	p:P1582 @<#P1582_natural_product_of_taxon>+ ;
 	p:P2849 @<#P2849_produced_by>+ ;
 
 	#identifiers
@@ -33,8 +33,8 @@ start = @<#flavouring_agent>
 	ps:P117 [commons:~] ;
 }
 
-<#P1528_natural_product_of_taxon> {
-	ps:P1528 [wd:~] ;
+<#P1582_natural_product_of_taxon> {
+	ps:P1582 [wd:~] ;
 	prov:wasDerivedFrom @<reference>+ ;
 }
 
@@ -44,13 +44,13 @@ start = @<#flavouring_agent>
 }
 
 <#P662_PubChem_CID> {
-	ps:P662 xsd:integer ;
+	ps:P662 xsd:string ;
 }
 
 <#P683_ChEBI> {
-	ps:P683 xsd:integer ;
+	ps:P683 xsd:string ;
 }
 
 <reference> {
-	
+
 }
