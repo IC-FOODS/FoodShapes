@@ -1,0 +1,50 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX commons: <http://commons.wikimedia.org/wiki/Special:FilePath/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<coffea_species>
+
+<coffea_species> {
+	p:P31 @<#P31_instance_of> ;
+	p:P141 @<#P141_conversation_status>+ ;
+	p:P627 @<#P627_IUCN_taxon_ID> ;
+}
+
+<#P31_instance_of> {
+	ps:P31 [wd:Q16521] ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<#P141_conversation_status> {
+	ps:P141  [
+       wd:Q211005 	# least concerned
+       wd:Q719675 	# near threatened
+       wd:Q158862 	# concervation dependent
+       wd:Q278113 	# vulnerable
+       wd:Q11394 	# endengered species
+       wd:Q219127	# critically endangered
+       wd:Q239509	# extinct in the wilde
+       wd:Q237350	# extinct
+       wd:Q3245245	# data deficient
+	] ;
+	pq:P585   xsd:dateTime? ; # P585 = point in time (optional)
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<#P627_IUCN_taxon_ID> {
+	ps:P627  xsd:string ;
+}
+
+<reference> {
+
+}
